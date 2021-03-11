@@ -3,6 +3,7 @@
 class Figure {
 	bool color;
 	short type;
+	short pos;
 };
 
 class Board {};
@@ -12,13 +13,12 @@ class Player {
 	int score;
 };
 
-class Cell {
-	short number;
-	bool color;
-};
+void draw_board() {
+	
+}
 
 int main () {
-	sf::RenderWindow win(sf::VideoMode(800, 600), "Chess");
+	sf::Window win(sf::VideoMode(800, 600), "Chess");
 	while (win.isOpen()) {
 		sf::Event event;
 		while (win.pollEvent(event))
@@ -27,7 +27,5 @@ int main () {
 				win.close();
 		}
 	}
-	win.clear();
-	win.display();
 	return 0;
 }
