@@ -1,11 +1,15 @@
-#include "../include/wins.hpp"
+#include "../include/windowlist.hpp"
 #include "../include/button.hpp"
+
+#define WINDOW_WIDTH 600
+#define WINDOW_HEIGHT 300
 
 void main_menu () {
 	// рисуем окошко
-	sf::RenderWindow menu(sf::VideoMode(600, 300), "Chess!", sf::Style::Titlebar | sf::Style::Close);
+	sf::RenderWindow menu(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Chess!", sf::Style::Titlebar | sf::Style::Close);
 	menu.setFramerateLimit(60);
-	menu.setPosition(sf::Vector2i((sf::VideoMode::getDesktopMode().width) / 2 - 300, (sf::VideoMode::getDesktopMode().height) / 2 - 150));
+	menu.setPosition(sf::Vector2i((sf::VideoMode::getDesktopMode().width) / 2 - WINDOW_WIDTH / 2,
+		(sf::VideoMode::getDesktopMode().height) / 2 - WINDOW_HEIGHT / 2));
 
 	// грузим шрифтец
 	sf::Font serif_font;
@@ -20,7 +24,7 @@ void main_menu () {
 	title.setCharacterSize(72);
 	title.setFillColor(sf::Color(215, 253, 236));
 	title.setString(L"Шахматы");
-	title.setPosition(140.f, 10.f);
+	title.setPosition(WINDOW_WIDTH / 2 - title.getGlobalBounds().width / 2, 10.f);
 
 	// кнопка 
 

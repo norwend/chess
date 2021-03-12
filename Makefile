@@ -4,7 +4,7 @@ compile:
 	mv a.out chess
 	cp ./contents/TNR.ttf ./TNR.ttf
 	cp ./contents/chessboard.png ./chessboard.png
-	rm ./include/button.hpp.gch ./include/wins.hpp.gch 
+	rm ./include/*.gch
 mkapp:
 	mkdir -p ./Chess.app/Contents/MacOS
 	cp ./contents/Info.plist ./Chess.app/Info.plist
