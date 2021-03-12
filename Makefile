@@ -1,10 +1,10 @@
 all: compile mkapp
 compile:
-	g++ ./src/main.cpp ./src/menu.cpp ./include/*.* -L /usr/local/lib/ -lsfml-window -lsfml-graphics -lsfml-system -lsfml-audio -lsfml-network
+	g++ ./src/main.cpp ./src/menu.cpp ./src/chessboard.cpp ./include/*.* -L /usr/local/lib/ -lsfml-window -lsfml-graphics -lsfml-system
 	mv a.out chess
 	cp ./contents/TNR.ttf ./TNR.ttf
 	cp ./contents/chessboard.png ./chessboard.png
-	rm ./include/button.hpp.gch ./include/window_drawer.hpp.gch 
+	rm ./include/button.hpp.gch ./include/wins.hpp.gch 
 mkapp:
 	mkdir -p ./Chess.app/Contents/MacOS
 	cp ./contents/Info.plist ./Chess.app/Info.plist

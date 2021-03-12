@@ -1,4 +1,4 @@
-#include "../include/window_drawer.hpp"
+#include "../include/wins.hpp"
 #include "../include/button.hpp"
 
 void main_menu () {
@@ -46,8 +46,8 @@ void main_menu () {
 				break;
 			case sf::Event::MouseButtonPressed:
 				start.scale(0.66, 0.66);
-				chessboard();
 				menu.close();
+				chessboard();
 				break;
 			default:
 				break;
