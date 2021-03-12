@@ -50,9 +50,11 @@ void main_menu () {
 				else start.setBackColor(sf::Color(215, 253, 236));
 				break;
 			case sf::Event::MouseButtonPressed:
-				start.scale(0.66, 0.66);
-				menu.close();
-				chessboard();
+				if (start.isMouseOver(menu)) {
+					menu.close();
+					chessboard();
+				}
+				else start.setBackColor(sf::Color(215, 253, 236));
 				break;
 			default:
 				break;

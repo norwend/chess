@@ -1,8 +1,12 @@
 #include "../include/windowlist.hpp"
+#include "../include/figure.hpp"
 #define WINDOW_WIDTH 1000
 #define WINDOW_HEIGHT 700
 
+
+
 void chessboard () {
+
 	// настройки окна
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 4;
@@ -18,18 +22,36 @@ void chessboard () {
 	sf::RectangleShape background(sf::Vector2f(700.f, 700.f));
 	background.setTexture(&bgtext);
 
+	sf::Image pieces;
+	pieces.loadFromFile("chesspieces.png");
+	Pawn pawn1(0, 0, 0, pieces);
+	Pawn pawn2(1, 0, 1, pieces);
+
 	//главный цикл
 	while (board.isOpen()) {
 		sf::Event event;
 		while (board.pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
+			switch (event.type)
+			{
+			case sf::Event::Closed:
 				board.close();
+				break;
+			
+			case sf::Event::MouseButtonPressed:
+				break;
+
+			case sf::Event::MouseButtonReleased:
+				break;
+				
+			default:
+				break;
+			}
 		}
 		board.clear(sf::Color(247, 197, 159));
 
-		
 		board.draw(background);
-
+		pawn1.draw_to(board);
+		pawn2.draw_to(board);
 		board.display();
 	}
 	// после закрытия окна уходим в меню

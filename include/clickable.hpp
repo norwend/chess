@@ -20,9 +20,12 @@ public:
 		
 		return false;
 	}
+	void draw_to (sf::RenderWindow& window) {
+		window.draw(rect);
+	}
 protected:
-	Clickable () {}
-	Clickable (sf::Vector2f size) {
+	Clickable() {}
+	Clickable(sf::Vector2f size) {
 		rect.setSize(size);
 	}
 	sf::RectangleShape rect;
