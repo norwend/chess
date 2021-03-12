@@ -5,6 +5,7 @@ void main_menu () {
 	// рисуем окошко
 	sf::RenderWindow menu(sf::VideoMode(600, 300), "Chess!", sf::Style::Titlebar | sf::Style::Close);
 	menu.setFramerateLimit(60);
+	menu.setPosition(sf::Vector2i((sf::VideoMode::getDesktopMode().width) / 2 - 300, (sf::VideoMode::getDesktopMode().height) / 2 - 150));
 
 	// грузим шрифтец
 	sf::Font serif_font;
